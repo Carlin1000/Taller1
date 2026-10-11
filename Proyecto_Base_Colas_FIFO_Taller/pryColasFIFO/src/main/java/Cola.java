@@ -13,8 +13,15 @@ public class Cola {
     }
 
     public void agregar(Pasajero p) {
+        
         if (p == null) {
             throw new IllegalArgumentException("El pasajero no puede ser nulo");
+        }
+
+
+        if (p.getNombre() == null || p.getNombre().trim().isEmpty()) {
+    throw new IllegalArgumentException(
+            "El nombre del pasajero no puede ser nulo, vacío ni solo espacios");
         }
 
         // TODO R1: validar nombre, asiento entre 1 y 30 y asiento no repetido.
