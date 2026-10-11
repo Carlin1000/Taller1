@@ -26,10 +26,22 @@ public class Cola {
 
         // TODO R1: validar nombre, asiento entre 1 y 30 y asiento no repetido.
         // Validar ANTES de modificar la colección.
+        validarRango(p.getNumeroAsiento());
 
+        for (Pasajero otro : coleccion) {
+            if (otro.getNumeroAsiento() == p.getNumeroAsiento()) {
+                throw new IllegalArgumentException(
+                        "El asiento " + p.getNumeroAsiento() + " ya está ocupado");
+            }
+        }
         coleccion.offer(p);
-    }
 
+    }
+    public void validarRango(int asiento) {
+        if (asiento < 1 || asiento > 30) {
+            throw new IllegalArgumentException("El asiento debe estar entre 1 y 30");
+        }
+    }
     public Pasajero extraer() {
         if (coleccion.isEmpty()) {
             throw new NoSuchElementException("Cola sin elementos");
