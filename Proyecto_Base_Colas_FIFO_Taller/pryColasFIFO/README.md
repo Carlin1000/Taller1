@@ -1,5 +1,7 @@
 # Taller grupal de pasajeros con colas FIFO
 
+## Integrantes: Emily, Isaac Quinapallo, Carlos Luis Viteri, Sebastian, German, Martin
+
 ## Consigna
 
 Completen tres funcionalidades del proyecto de pasajeros de una aerolínea. Trabajen en grupo y conserven el orden FIFO: el primero que llega es el primero atendido. Utilicen `Queue<Pasajero>` con `LinkedList<Pasajero>`; la categoría del asiento no cambia el turno de atención.

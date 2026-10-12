@@ -20,22 +20,20 @@ public class Cola {
 
 
         if (p.getNombre() == null || p.getNombre().trim().isEmpty()) {
-    throw new IllegalArgumentException(
-            "El nombre del pasajero no puede ser nulo, vacío ni solo espacios");
+            throw new IllegalArgumentException("El nombre del pasajero no puede ser nulo, vacío ni solo espacios");
         }
 
         // TODO R1: validar nombre, asiento entre 1 y 30 y asiento no repetido.
         // Validar ANTES de modificar la colección.
         validarRango(p.getNumeroAsiento());
 
+        // R1: Validar asiento repetido
         for (Pasajero otro : coleccion) {
             if (otro.getNumeroAsiento() == p.getNumeroAsiento()) {
-                throw new IllegalArgumentException(
-                        "El asiento " + p.getNumeroAsiento() + " ya está ocupado");
+                throw new IllegalArgumentException("El asiento " + p.getNumeroAsiento() + " ya está ocupado");
             }
         }
         coleccion.offer(p);
-
     }
     public void validarRango(int asiento) {
         if (asiento < 1 || asiento > 30) {
