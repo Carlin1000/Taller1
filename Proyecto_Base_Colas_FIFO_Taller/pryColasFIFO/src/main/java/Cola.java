@@ -90,7 +90,16 @@ public class Cola {
 
     public Pasajero cancelarPorAsiento(int asiento) {
         // TODO R3: retirar únicamente al indicado y conservar el orden restante.
-        throw new UnsupportedOperationException("Pendiente implementar R3: cancelación");
+        validarRango(asiento);
+        java.util.Iterator<Pasajero> iterator= coleccion.iterator();
+        while(iterator.hasNext()){
+            Pasajero p = iterator.next();
+            if (p.getNumeroAsiento() == asiento){
+                iterator.remove();
+                return p;
+            }
+        }
+        throw new NoSuchElementException("El asiento "+ asiento+ " no se encuentra en la cola");
     }
 
     @Override
