@@ -27,7 +27,7 @@ public class Cola {
         // Validar ANTES de modificar la colección.
         validarRango(p.getNumeroAsiento());
 
-        // R1: Validar asiento repetido
+        // R1: Validar asiento repetido de pasajero en la cola. No se permite duplicados.
         for (Pasajero otro : coleccion) {
             if (otro.getNumeroAsiento() == p.getNumeroAsiento()) {
                 throw new IllegalArgumentException("El asiento " + p.getNumeroAsiento() + " ya está ocupado");
