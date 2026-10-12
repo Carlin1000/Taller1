@@ -13,7 +13,7 @@ public class Cola {
     }
 
     public void agregar(Pasajero p) {
-        
+
         if (p == null) {
             throw new IllegalArgumentException("El pasajero no puede ser nulo");
         }
@@ -67,8 +67,13 @@ public class Cola {
     }
 
     public Pasajero buscarPorAsiento(int asiento) {
-        // TODO R2: validar rango y buscar sin retirar pasajeros.
-        throw new UnsupportedOperationException("Pendiente implementar R2: búsqueda");
+        validarRango(asiento);
+        for (Pasajero p : coleccion) {
+            if (p.getNumeroAsiento() == asiento) {
+                return p;
+            }
+        }
+        return null;
     }
 
     public int posicionPorAsiento(int asiento) {
